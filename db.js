@@ -8,7 +8,7 @@ var knex = require('knex')( {
 		host	: config.postgres.host,
 		user	: config.postgres.user,
 		password: config.postgres.password,
-		database: 'cstrackerdb',
+		database: 'CSTrackerDB',
 		charset : 'utf8',
 	}
 } );

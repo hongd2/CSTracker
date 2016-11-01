@@ -1,7 +1,15 @@
 {
   "name": "CSTracker",
-  "version": "0.0.0",
+  "description": "The main server on the could for the app CSTracker",
+  "author": "David Hong <davidhong92@gmail.com>",
+  "version": "1.0.0",
   "private": true,
+  "main" : "app.js",
+  "licenses": [{
+	"type": "GPL",
+	"url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html"
+  }],
+  "repository": "https://github.com/hongd2/CSTracker.git", 
   "scripts": {
     "start": "node ./bin/www"
   },
