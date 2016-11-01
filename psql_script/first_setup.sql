@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS students (
 	lastName		VARCHAR( 200 ),
 	year			INTEGER,
 	major			VARCHAR( 200 ),
-	minor			VARCHAR( 200 ),
+	phone			VARCHAR( 15 ),
+	email			VARCHAR( 200 ),
 	PRIMARY KEY (student_id)
 );
 
@@ -26,8 +27,16 @@ CREATE TABLE IF NOT EXISTS fullTimers (
 	fullTimer_id		SERIAL,
 	firstName		VARCHAR( 200 ),
 	lastName		VARCHAR( 200 ),
-	address			VARCHAR( 200 ),
-	student_id		SERIAL,
-	FOREIGN KEY (student_id) REFERENCES students (student_id) ON DELETE CASCADE ON UPDATE CASCADE,
 	PRIMARY KEY (fullTimer_id)
+);
+
+CREATE TABLE IF NOT EXISTS student_fullTimer (
+	student_fullTimer_id	SERIAL,
+	student_id		SERIAL,
+	fullTimer_id		SERIAL,
+	start_time		TIMESTAMPTZ NOT NULL,
+	end_time		TIMESTAMPTZ,
+	FOREIGN KEY (student_id) REFERENCES students (student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (fullTimer_id) REFERENCES fullTimers (fullTimer_id) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (student_fullTimer_id)
 );

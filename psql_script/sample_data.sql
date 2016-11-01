@@ -17,8 +17,18 @@ INSERT INTO users (username, password, salt, admin_flag, fullTimer_flag, student
 
 DELETE FROM students;
 
-INSERT INTO students (firstName, lastName, year, major, minor) VALUES ( 'Jimmy', 'Junior', 1, 'Computer Science', 'Business Economics' );
+INSERT INTO students (firstName, lastName, year, major, phone, email) VALUES ( 'Jimmy', 'Junior', 1, 'Computer Science', '555-111-1111', 'jimmyjunior@gmail.com' );
+
+INSERT INTO students (firstName, lastName, year, major, phone, email) VALUES ( 'Sarah', 'Plette', 4, 'Biology', '555-222-2222', 'sarahplette@gmail.com' );
+
+INSERT INTO students (firstName, lastName, year, major, phone, email) VALUES ( 'Abe', 'Kale', 2, 'Electrical Engineering', '555-333-3333', 'abekale@gmail.com' );
 
 DELETE FROM fullTimers;
 
-INSERT INTO fullTimers (firstName, lastName, address) VALUES ( 'David', 'Hong', '141 Sunset Cove, Irvine, CA, 92602' ); 
+INSERT INTO fullTimers (firstName, lastName) VALUES ( 'David', 'Hong' ); 
+
+DELETE FROM student_fullTimer;
+
+INSERT INTO student_fullTimer (student_id, fullTimer_id, start_time) VALUES ( 1, 1, NOW() );
+
+INSERT INTO student_fullTimer (student_id, fullTimer_id, start_time) VALUES ( 3, 1, NOW() );
